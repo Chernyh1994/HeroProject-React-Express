@@ -15,6 +15,7 @@ import AddIcon from '@material-ui/icons/Add';
 import TextField from '@material-ui/core/TextField';
 // uploadImgButton
 import useSignUpForm from './useSignUpForm';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
 
 
 const useStyles = makeStyles(theme => ({
@@ -60,6 +61,13 @@ const useStyles = makeStyles(theme => ({
   },
   input: {
     display: 'none',
+  },
+  buttonSave:{
+    background:'none',
+    border:'solid 1px grey',
+    margin: theme.spacing(1),
+    cursor:'pointer',
+    borderRadius:'5px',
   },
 
 }));
@@ -109,9 +117,6 @@ export default function CreateHeroModal() {
             <Typography variant="h6" className={classes.title}>
               Add Hero
             </Typography>
-            <Button color="inherit" onClick={handleClose}>
-              save
-            </Button>
           </Toolbar>
         </AppBar>
         <form onSubmit={handleSubmit} className={classes.container}  noValidate autoComplete="off">
@@ -197,7 +202,7 @@ export default function CreateHeroModal() {
               Upload <AddIcon/>
             </Button>
           </label>
-          <button>dqwdqwdqw</button>
+            <button className={classes.buttonSave} onClick={handleClose}>Save <SaveAltIcon/></button>
         </form>
       </Dialog>
     </div>
